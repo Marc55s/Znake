@@ -30,8 +30,9 @@ public class Znake {
         door = new Point();
     }
 
-    public static void main(String[] args) throws InterruptedException {
-        System.out.println("Press any Key to start... ");
+    public static void main(String[] args){
+        System.out.println("~Welcome to Znake!~");
+        System.out.println("Press w,a,s or d");
         Znake znake = new Znake();
         znake.startGame();
     }
@@ -140,8 +141,9 @@ public class Znake {
         gold.setLocation(x[1], y[1]);
         snake.setLocation(x[2], y[2]);
         player.setLocation(x[3], y[3]);
-        if (player.distance(snake) > 8) {
-        } else {
+        if (player.distance(snake) < 9) {
+            setSpawnsRandom();
+        } else if (gold.equals(door)) {
             setSpawnsRandom();
         }
 
